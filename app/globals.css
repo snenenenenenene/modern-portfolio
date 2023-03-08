@@ -22,7 +22,20 @@
 }
 
 html {
+  scroll-behavior: smooth;
 }
 * {
   transition: all 0.2s ease-in-out;
+}
+
+@layer base {
+  .font-outline-2 {
+    -webkit-text-stroke: 1.5px black;
+  }
+  .font-outline-0 {
+    -webkit-text-stroke: 0px black;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 4px black;
+  }
 }
