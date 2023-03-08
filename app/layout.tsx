@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Navbar } from "./components/common/Navbar";
 import "./globals.css";
 
 export const metadata = {
@@ -12,7 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="w-screen scroll-smooth overflow-x-hidden pb-96 text-light-secondary flex flex-col bg-light-primary">
+          <Navbar />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
