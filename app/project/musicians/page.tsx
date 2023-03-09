@@ -1,13 +1,22 @@
 import { Marquee } from "@/app/components/common/Marquee";
 import React from "react";
+import Image from "next/image";
 
-export const Musicians = () => {
+export default function Musicians() {
   return (
     <div className="w-full min-h-screen h-full pt-20 flex-col">
       <main className="px-24 my-32 flex h-full   relative">
         <div className="w-1/2 pr-24 max-h-fit">
-          <h1 className="font-display text-8xl">MUSICIANS</h1>
-          <p>Musicians was </p>
+          <h1 className="font-display text-8xl mb-8">MUSICIANS</h1>
+          <p>
+            Musicians is the brainchild of Jstack and me. This project was
+            intended to create an intuitive and pragmatic way for young artists
+            to sell demo&apos;s, tracks, and samples to potential investors.
+            This is possible through the online interface, as well as through a
+            scannable QR-code. As I was working on the project as a frontend
+            developer most functionalities are wired through a mock API instead
+            of an actual backend.
+          </p>
           <section className="flex font-body mt-40">
             <span className="flex flex-col">
               <p>YEAR</p>
@@ -18,26 +27,46 @@ export const Musicians = () => {
               <p>Development</p>
             </span>
             <span className="flex flex-col justify-end ml-auto">
-              View Project
+              <a
+                href="https://lynx-osoc.netlify.app/"
+                className="underline-offset-2"
+              >
+                View Demo
+              </a>
+              <a
+                href="https://github.com/snenenenenenene/musicians-frontend"
+                className="underline-offset-2"
+              >
+                View Project
+              </a>
             </span>
           </section>
         </div>
         <div className="w-1/2 h-full flex flex-col gap-y-20">
-          <img
-            alt="image-1"
-            src="/assets/images/web/musicians.jpeg"
-            className="w-full"
-          />
-          <img
-            alt="image-1"
-            src="/assets/images/web/musicians.jpeg"
-            className="w-full"
-          />
-          <img
-            alt="image-1"
-            src="/assets/images/web/musicians.jpeg"
-            className="w-full"
-          />
+          <section className="relative object-cover w-full h-96">
+            <Image
+              fill
+              alt="image-1"
+              src="/assets/images/web/musicians.jpeg"
+              className="w-full"
+            />
+          </section>
+          <section className="relative object-cover w-full h-96">
+            <Image
+              fill
+              alt="image-1"
+              src="/assets/images/web/musicians.jpeg"
+              className="w-full"
+            />
+          </section>
+          <section className="relative object-cover w-full h-96">
+            <Image
+              fill
+              alt="image-1"
+              src="/assets/images/web/musicians.jpeg"
+              className="w-full"
+            />
+          </section>
         </div>
       </main>
 
@@ -65,6 +94,4 @@ export const Musicians = () => {
       </nav>
     </div>
   );
-};
-
-export default Musicians;
+}
