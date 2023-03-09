@@ -1,17 +1,17 @@
 import { Marquee } from "@/app/components/common/Marquee";
 import React from "react";
 
-export const ThreePortfolio = () => {
+export const Musicians = () => {
   return (
     <div className="w-full min-h-screen h-full pt-20 flex-col">
       <main className="px-24 my-32 flex h-full   relative">
         <div className="w-1/2 pr-24 max-h-fit">
-          <h1 className="font-display text-8xl">Senne's Ramenshop</h1>
-          <p>My 3D portfolio was </p>
+          <h1 className="font-display text-8xl">MUSICIANS</h1>
+          <p>Musicians was </p>
           <section className="flex font-body mt-40">
             <span className="flex flex-col">
               <p>YEAR</p>
-              <p> 2023</p>
+              <p> 2022</p>
             </span>
             <span className="flex flex-col ml-20">
               <p>ROLE</p>
@@ -25,17 +25,17 @@ export const ThreePortfolio = () => {
         <div className="w-1/2 h-full flex flex-col gap-y-20">
           <img
             alt="image-1"
-            src="/assets/images/web/3d.png"
+            src="/assets/images/web/musicians.jpeg"
             className="w-full"
           />
           <img
             alt="image-1"
-            src="/assets/images/web/3d.png"
+            src="/assets/images/web/musicians.jpeg"
             className="w-full"
           />
           <img
             alt="image-1"
-            src="/assets/images/web/3d.png"
+            src="/assets/images/web/musicians.jpeg"
             className="w-full"
           />
         </div>
@@ -44,12 +44,6 @@ export const ThreePortfolio = () => {
       <Marquee
         className="mt-auto border-b-0"
         wordList={[
-          "MORE PROJECTS",
-          "MORE PROJECTS",
-          "MORE PROJECTS",
-          "MORE PROJECTS",
-          "MORE PROJECTS",
-          "MORE PROJECTS",
           "MORE PROJECTS",
           "MORE PROJECTS",
           "MORE PROJECTS",
@@ -73,4 +67,4 @@ export const ThreePortfolio = () => {
   );
 };
 
-export default ThreePortfolio;
+export default Musicians;
