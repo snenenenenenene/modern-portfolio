@@ -1,11 +1,12 @@
 "use client";
+
 import { Canvas } from "@react-three/fiber";
 import { Model } from "./components/common/Model";
 import { Suspense, useRef, useState } from "react";
 import { Marquee } from "./components/common/Marquee";
 import Link from "next/link";
 import { MotionHover } from "./components/three/3d";
-
+import Image from "next/image";
 export default function Home() {
   const [mousePos, setMousePos] = useState<{ x: number; y: number }>({
     x: 0,
@@ -32,7 +33,7 @@ export default function Home() {
         <Model
           ref={modelRef}
           scale={3}
-          position={[130, 280, -500]}
+          position={[130, 260, -500]}
           rotation={[
             0 - mousePos.x / 5000,
             -Math.PI / 3 + mousePos.y / 5000,
@@ -50,11 +51,11 @@ export default function Home() {
           )}
         </Suspense>
       </Canvas>
-      <main className="px-5 pt-24 flex w-full relative">
+      <main className="px-8 pt-40 flex w-full relative">
         <h1 className="z-10 font-display text-[27.5rem] leading-[26rem]">
           <div>Senne Bels</div>
           <div className="flex">
-            <div className="font-body text-2xl w-[24.4rem] mt-40 flex flex-col justify-center">
+            <div className="font-body text-2xl w-[24.4rem] mt-[1.5rem] flex flex-col justify-center">
               <p>Hi 🦝</p>
               <p>I&apos;m a frontend developer</p>
               <p>from Belgium</p>
@@ -97,12 +98,13 @@ export default function Home() {
             href="/project/lynx"
             className="border-2 border-light-primary dark:border-dark-primary dark:hover:border-dark-secondary overflow-hidden p-10 hover:border-light-secondary w-full h-full flex flex-col"
           >
-            <section className=" h-full">
-              <img
+            <section className=" h-full relative">
+              <Image
                 src="assets/images/web/lynx-logo.svg"
                 className="w-full xl:h-[20rem] lg:h-[10rem] object-cover"
                 alt=""
-                loading="lazy"
+                unoptimized
+                fill
               />
             </section>
             <p className="text-6xl font-display ml-auto mt-5">
@@ -116,12 +118,13 @@ export default function Home() {
             href="/project/musicians"
             className="border-2 border-light-primary dark:border-dark-primary overflow-hidden p-10 hover:border-light-secondary hover:dark:border-dark-secondary w-full h-full flex flex-col"
           >
-            <section className=" h-full">
-              <img
+            <section className=" h-full relative">
+              <Image
                 src="assets/images/web/musicians.jpeg"
                 className="w-full xl:h-[20rem] lg:h-[10rem] object-cover"
                 alt=""
-                loading="lazy"
+                unoptimized
+                fill
               />
             </section>
             <p className="text-6xl font-display ml-auto mt-5">MUSICIANS</p>
@@ -133,12 +136,13 @@ export default function Home() {
             href="/project/3d-portfolio"
             className="border-2 dark:border-dark-primary border-light-primary overflow-hidden p-10 hover:border-light-secondary hover:dark:border-dark-secondary w-full h-full flex flex-col"
           >
-            <section className=" h-full">
-              <img
+            <section className=" h-full relative">
+              <Image
                 src="assets/images/web/3d.png"
                 className="w-full xl:h-[20rem] lg:h-[10rem] object-cover"
                 alt=""
-                loading="lazy"
+                unoptimized
+                fill
               />
             </section>
             <p className="text-6xl font-display ml-auto mt-5">3D PORTFOLIO</p>
@@ -150,12 +154,13 @@ export default function Home() {
             href="/project/dnd-app"
             className="border-2 dark:border-dark-primary border-light-primary overflow-hidden p-10 hover:border-light-secondary hover:dark:border-dark-secondary w-full h-full flex flex-col"
           >
-            <section className="h-full">
-              <img
+            <section className="h-full relative">
+              <Image
                 src="assets/images/web/dnd-app.png"
                 className="w-full xl:h-[20rem] lg:h-[10rem] object-cover"
                 alt=""
-                loading="lazy"
+                unoptimized
+                fill
               />
             </section>
             <p className="text-6xl font-display ml-auto mt-5">DND APP</p>
@@ -179,7 +184,7 @@ export default function Home() {
           "3D MODELS",
         ]}
       />
-      <main className="w-full h-96 flex flex-col relative">
+      <main className="w-full h-[20rem] flex flex-col relative">
         <section
           onMouseLeave={() => {
             setThreeDHoverPath("");
@@ -204,10 +209,10 @@ export default function Home() {
             <p>2022</p>
             <p className="uppercase ml-32 text-2xl">MY ROOM</p>
           </div>
-          <div className="border-t h-20 border-light-tertiary flex items-center pl-32">
+          {/* <div className="border-t h-20 border-light-tertiary flex items-center pl-32">
             <p>2023</p>
             <p className="uppercase ml-32 text-2xl">HOUSE</p>
-          </div>
+          </div> */}
           <div
             onMouseEnter={() => {
               setThreeDHoverPath("assets/images/3D/laptop.png");
@@ -217,7 +222,12 @@ export default function Home() {
             <p>2023</p>
             <p className="uppercase ml-32 text-2xl">LAPTOP</p>
           </div>
-          <div className="border-t h-20 border-light-tertiary flex items-center pl-32">
+          <div
+            onMouseEnter={() => {
+              setThreeDHoverPath("assets/images/3D/pangolin.png");
+            }}
+            className="border-t h-20 border-light-tertiary flex items-center pl-32"
+          >
             <p>2023</p>
             <p className="uppercase ml-32 text-2xl">PANGOLIN</p>
           </div>

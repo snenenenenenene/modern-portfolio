@@ -3,7 +3,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { useSelectedLayoutSegment } from "next/navigation";
 import Link from "next/link";
-
+import { FaMoon, FaSun } from "react-icons/fa";
 export const Navbar = () => {
   const [theme, setTheme] = useState("");
   // for dark mode
@@ -93,12 +93,57 @@ export const Navbar = () => {
           ABOUT
         </Link>
       </section>
-      <button
-        onClick={() => toggleTheme()}
+      <div
+        // onClick={() => toggleTheme()}
         className="w-40 border-l dark:border-dark-secondary border-light-secondary flex justify-center items-center"
       >
-        <p>SUN</p>
-      </button>
+        <button
+          title="Toggle Theme"
+          onClick={() => toggleTheme()}
+          className="
+        w-10
+        h-5
+        rounded-full
+        p-1
+        ring-light-secondary
+        dark:ring-dark-secondary
+        relative
+        transition-colors
+        duration-500
+        ease-in
+        outline-none
+        flex
+        items-center
+        ring-2
+
+      "
+        >
+          <div
+            id="toggle"
+            className="
+            rounded-full
+            w-[0.8rem]
+            h-[0.8rem]
+            bg-light-secondary
+            dark:bg-dark-secondary
+            relative
+            ml-[1.2rem]
+            dark:ml-0
+            pointer-events-none
+            transition-all
+            duration-300
+            ease-out
+            z-50
+        "
+          />
+          <div className="text-light-secondary absolute top-o left-0 m-1">
+            <FaSun className="w-3 h-3" />
+          </div>
+          <div className=" absolute top-o right-0 m-1 dark:text-dark-secondary">
+            <FaMoon className="w-3 h-3" />
+          </div>
+        </button>
+      </div>
     </nav>
   );
 };
