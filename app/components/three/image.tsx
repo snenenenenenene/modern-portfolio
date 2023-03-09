@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useFrame, useLoader } from "@react-three/fiber";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
@@ -59,7 +60,7 @@ export const ImagePlane = ({ image }: { image: string }) => {
       if (mousePos.x !== 0 && mousePos.y !== 0) {
         raycaster.setFromCamera(mousePos, camera);
         const intersects = raycaster.intersectObjects([ref.current]);
-        if (intersects.length) {
+        if (intersects.length && intersects[0].uv) {
           const point = new THREE.Vector2(
             intersects[0].uv.x,
             intersects[0].uv.y
