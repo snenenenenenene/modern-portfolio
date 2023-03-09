@@ -6,11 +6,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       animation: {
-        marquee: "marquee 25s linear infinite",
-        marquee2: "marquee2 25s linear infinite",
+        marquee: "marquee 50s linear infinite",
+        marquee2: "marquee2 50s linear infinite",
       },
       keyframes: {
         marquee: {
@@ -38,7 +39,7 @@ module.exports = {
         },
         dark: {
           primary: "#262523",
-          secondary: "#FFF6F0",
+          secondary: "#FFF7F0",
           tertiary: "#BF9B30",
           text: "#FFFFFF",
         },
