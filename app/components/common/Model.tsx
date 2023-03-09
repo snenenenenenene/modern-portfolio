@@ -4,7 +4,7 @@ import React from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Model(props: any) {
-  const { nodes, materials }: any = useGLTF("/assets/pangolin.glb");
+  const { nodes, materials }: any = useGLTF("/assets/pangolin.gltf");
   return (
     <group {...props} dispose={null}>
       <group position={[0, 19.75, 0]} scale={6.68}>
