@@ -1,11 +1,12 @@
 import { Marquee } from "@/app/components/common/Marquee";
+import Image from "next/image";
 import React from "react";
 
-export const Dnd = () => {
+export default function Dnd() {
   return (
     <div className="w-full min-h-screen h-full pt-20 flex-col">
       <main className="px-24 my-32 flex h-full   relative">
-        <div className="w-1/2 pr-24 max-h-fit">
+        <div className="w-1/2 pr-24 max-h-fit sticky">
           <h1 className="font-display text-8xl">DND APP</h1>
           <p>This DND Character Creation Tool </p>
           <section className="flex font-body mt-40">
@@ -18,26 +19,46 @@ export const Dnd = () => {
               <p>Development</p>
             </span>
             <span className="flex flex-col justify-end ml-auto">
-              View Project
+              <a
+                href="https://lynx-osoc.netlify.app/"
+                className="underline-offset-2"
+              >
+                View Demo
+              </a>
+              <a
+                href="https://github.com/snenenenenenene/dnd-character-tool"
+                className="underline-offset-2"
+              >
+                View Project
+              </a>
             </span>
           </section>
         </div>
         <div className="w-1/2 h-full flex flex-col gap-y-20">
-          <img
-            alt="image-1"
-            src="/assets/images/web/dnd-app.png"
-            className="w-full"
-          />
-          <img
-            alt="image-1"
-            src="/assets/images/web/dnd-app.png"
-            className="w-full"
-          />
-          <img
-            alt="image-1"
-            src="/assets/images/web/dnd-app.png"
-            className="w-full"
-          />
+          <section className="relative object-cover w-full h-96">
+            <Image
+              alt="image-1"
+              src="/assets/images/web/dnd-app.png"
+              className="w-full"
+              fill
+            />
+          </section>
+          <section className="relative object-cover w-full h-96">
+            <Image
+              fill
+              alt="image-1"
+              src="/assets/images/web/dnd-app.png"
+              className="w-full"
+            />
+          </section>
+          <section className="relative object-cover w-full h-96">
+            <Image
+              fill
+              alt="image-1"
+              src="/assets/images/web/dnd-app.png"
+              className="w-full"
+            />
+          </section>
         </div>
       </main>
 
@@ -71,6 +92,4 @@ export const Dnd = () => {
       </nav>
     </div>
   );
-};
-
-export default Dnd;
+}
