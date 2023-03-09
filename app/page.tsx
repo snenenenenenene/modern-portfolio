@@ -7,6 +7,7 @@ import { Marquee } from "./components/common/Marquee";
 import Link from "next/link";
 import { MotionHover } from "./components/three/3d";
 import Image from "next/image";
+import { TfiEmail, TfiGithub, TfiLinkedin } from "react-icons/tfi";
 export default function Home() {
   const [mousePos, setMousePos] = useState<{ x: number; y: number }>({
     x: 0,
@@ -237,6 +238,28 @@ export default function Home() {
         <h2 className="font-bold text-[13rem] absolute left-1/2 top-1/2 -translate-y-1/2  -translate-x-1/2">
           Reach out
         </h2>
+        <section className="text-7xl flex px-40 justify-between mt-[30rem]">
+          <div>
+            <a href="https://www.linkedin.com/in/sennebels/">
+              <TfiLinkedin />
+            </a>
+          </div>
+          <div>
+            <p
+              className="cursor-pointer"
+              onClick={() => {
+                navigator.clipboard.writeText("sennebels@gmail.com");
+              }}
+            >
+              <TfiEmail />
+            </p>
+          </div>
+          <div>
+            <a href="https://github.com/snenenenenenene">
+              <TfiGithub />
+            </a>
+          </div>
+        </section>
       </main>
     </div>
   );
