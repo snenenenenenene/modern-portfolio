@@ -1,6 +1,6 @@
 import React from "react";
 
-export const About = () => {
+export default function About() {
   return (
     <div className="min-h-screen mt-32 px-24 flex flex-col">
       <h1 className=" font-display text-8xl flex flex-col">
@@ -44,6 +44,4 @@ export const About = () => {
       </div>
     </div>
   );
-};
-
-export default About;
+}
