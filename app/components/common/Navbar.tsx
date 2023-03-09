@@ -1,11 +1,43 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { useSelectedLayoutSegment } from "next/navigation";
+import Link from "next/link";
 
 export const Navbar = () => {
+  const [theme, setTheme] = useState("");
+  // for dark mode
+  useEffect(() => {
+    const theme = JSON.parse(localStorage.getItem("theme") as string);
+    if (
+      (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches) ||
+      theme === "dark"
+    ) {
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
+    } else {
+      setTheme("light");
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  // toggle theme
+  function toggleTheme() {
+    if (theme === "light") {
+      localStorage.setItem("theme", JSON.stringify("dark"));
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
+    } else {
+      localStorage.setItem("theme", JSON.stringify("light"));
+      setTheme("light");
+      document.documentElement.classList.remove("dark");
+    }
+  }
   const navbar = useRef<any>(null);
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  const activeSegment = useSelectedLayoutSegment();
 
   function controlNavbar() {
     if (typeof window !== "undefined") {
@@ -35,19 +67,38 @@ export const Navbar = () => {
     <nav
       ref={navbar}
       className={`${
-        show ? "h-14 border-b border-light-secondary" : "h-0"
-      } fixed z-50 bg-light-primary overflow-hidden font-body w-full  flex`}
+        show
+          ? "h-14 border-b dark:border-dark-secondary border-light-secondary"
+          : "h-0"
+      } fixed z-50 transition-all duration-500 dark:bg-dark-primary bg-light-primary overflow-hidden font-body w-full  flex`}
     >
-      <section className="border-r text-5xl border-light-secondary flex justify-center items-center w-40 h-full">
-        <h2 className="font-display tracking-wide">Senne Bels</h2>
+      <section className="border-r text-5xl dark:border-dark-secondary border-light-secondary flex justify-center items-center w-40 h-full">
+        <Link href={"/"}>
+          <h2 className="font-display tracking-wide">Senne Bels</h2>
+        </Link>
       </section>
       <section className="flex items-center ml-auto gap-8 px-8">
-        <p>PROJECTS</p>
-        <p>ABOUT</p>
+        <Link
+          href={"/"}
+          className={`${
+            activeSegment === "" || activeSegment === null ? "underline" : ""
+          }`}
+        >
+          PROJECTS
+        </Link>
+        <Link
+          href={"/about"}
+          className={`${activeSegment === "about" ? "underline" : ""}`}
+        >
+          ABOUT
+        </Link>
       </section>
-      <section className="w-40 border-l border-light-secondary flex justify-center items-center">
-        <button>SUN</button>
-      </section>
+      <button
+        onClick={() => toggleTheme()}
+        className="w-40 border-l dark:border-dark-secondary border-light-secondary flex justify-center items-center"
+      >
+        <p>SUN</p>
+      </button>
     </nav>
   );
 };

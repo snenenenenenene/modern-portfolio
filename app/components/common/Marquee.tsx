@@ -9,7 +9,7 @@ export const Marquee = ({
 }) => {
   return (
     <main
-      className={`${className} relative flex overflow-x-hidden border-y h-24 border-light-secondary items-center w-auto overflow-hidden font-bold `}
+      className={`${className} relative flex overflow-x-hidden border-y h-24 dark:border-dark-secondary border-light-secondary items-center w-auto overflow-hidden font-bold `}
     >
       <div className="py-12 animate-marquee whitespace-nowrap items-center flex gap-x-4">
         {wordList.map((word: string, i: number) => (
