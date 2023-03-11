@@ -8,7 +8,7 @@ export default function Dnd() {
       <main className="px-24 my-32 flex h-full   relative">
         <div className="w-1/2 pr-24 max-h-fit sticky">
           <h1 className="font-display text-8xl">DND APP</h1>
-          <p>This DND Character Creation Tool </p>
+          <p>I am quite the avid Dungeons & Dragons enjoyer. </p>
           <section className="flex font-body mt-40">
             <span className="flex flex-col">
               <p>YEAR</p>
