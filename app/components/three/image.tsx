@@ -30,22 +30,6 @@ export const ImagePlane = ({ image }: { image: string }) => {
     x: 0,
     y: 0,
   };
-  // let mouse = useRef(null);
-
-  // useEffect(() => {
-  //   const update = (e: any) => {
-  //     if (mouse.current) {
-  //       mouse.current = new THREE.Vector2(
-  //         (e.clientX / window.innerWidth) * 2 - 1,
-  //         -(e.clientY / window.innerHeight) * 2 + 1
-  //       );
-  //     }
-  //   };
-  //   window.addEventListener("pointermove", update);
-  //   return () => {
-  //     window.removeEventListener("pointermove", update);
-  //   };
-  // }, []);
 
   useFrame(({ scene, camera }) => {
     if (ref.current) {
