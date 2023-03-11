@@ -1,5 +1,4 @@
 import { Marquee } from "@/app/components/common/Marquee";
-import React from "react";
 import Image from "next/image";
 
 export default function Musicians() {
@@ -28,7 +27,7 @@ export default function Musicians() {
             </span>
             <span className="flex flex-col justify-end ml-auto">
               <a
-                href="https://lynx-osoc.netlify.app/"
+                href="https://musicians-blond.vercel.app/"
                 className="underline-offset-2"
               >
                 View Demo

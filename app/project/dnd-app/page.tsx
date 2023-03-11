@@ -7,8 +7,13 @@ export default function Dnd() {
     <div className="w-full min-h-screen h-full pt-20 flex-col">
       <main className="px-24 my-32 flex h-full   relative">
         <div className="w-1/2 pr-24 max-h-fit sticky">
-          <h1 className="font-display text-8xl">DND APP</h1>
-          <p>I am quite the avid Dungeons & Dragons enjoyer. </p>
+          <h1 className="font-display text-8xl mb-8">DND APP</h1>
+          <p>
+            I am quite the avid Dungeons & Dragons enjoyer. Because of this I
+            thought it would be a great idea to work on a project that would
+            makethe creation and distribution of sheets and campaigns easier.
+            This was the start of this project.{" "}
+          </p>
           <section className="flex font-body mt-40">
             <span className="flex flex-col">
               <p>YEAR</p>
@@ -20,7 +25,7 @@ export default function Dnd() {
             </span>
             <span className="flex flex-col justify-end ml-auto">
               <a
-                href="https://lynx-osoc.netlify.app/"
+                href="https://dnd-character-tool.vercel.app/"
                 className="underline-offset-2"
               >
                 View Demo

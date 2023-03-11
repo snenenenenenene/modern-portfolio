@@ -53,10 +53,10 @@ export default function Home() {
         </Suspense>
       </Canvas>
       <main className="px-8 pt-40 flex w-full relative">
-        <h1 className="z-10 font-display text-[27.5rem] leading-[26rem]">
+        <h1 className="z-10 font-display xl:text-[27.5rem] md:text-[15rem] xl:leading-[26rem] md:leading-[14rem]">
           <div>Senne Bels</div>
           <div className="flex">
-            <div className="font-body text-2xl w-[24.4rem] mt-[1.5rem] flex flex-col justify-center">
+            <div className="font-body text-2xl xl:w-[24.4rem] md:w-[13.3rem] mt-[1.5rem] flex flex-col justify-center">
               <p>Hi 🦝</p>
               <p>I&apos;m a frontend developer</p>
               <p>from Belgium</p>
