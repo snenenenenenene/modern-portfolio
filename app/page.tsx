@@ -1,13 +1,13 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { Model } from "./components/common/Model";
-import { Suspense, useRef, useState } from "react";
-import { Marquee } from "./components/common/Marquee";
-import Link from "next/link";
-import { MotionHover } from "./components/three/3d";
 import Image from "next/image";
+import Link from "next/link";
+import { Suspense, useRef, useState } from "react";
 import { TfiEmail, TfiGithub, TfiLinkedin } from "react-icons/tfi";
+import { Marquee } from "./components/common/Marquee";
+import { Model } from "./components/common/Model";
+import { MotionHover } from "./components/three/3d";
 export default function Home() {
   const [mousePos, setMousePos] = useState<{ x: number; y: number }>({
     x: 0,
@@ -52,11 +52,11 @@ export default function Home() {
           )}
         </Suspense>
       </Canvas>
-      <main className="px-8 pt-40 flex w-full relative">
-        <h1 className="z-10 font-display xl:text-[27.5rem] md:text-[15rem] xl:leading-[26rem] md:leading-[14rem]">
+      <main className="sm:px-8 px-4 sm:pt-40 pt-20 flex w-full relative">
+        <h1 className="z-10 font-display xl:text-[27.5rem] md:text-[15rem] xl:leading-[26rem] leading-[9.5rem] md:leading-[14rem] text-[10rem]">
           <div>Senne Bels</div>
           <div className="flex">
-            <div className="font-body text-2xl xl:w-[24.4rem] md:w-[13.3rem] mt-[1.5rem] flex flex-col justify-center">
+            <div className="font-body sm:text-2xl text-lg xl:w-[24.4rem] w-[8.9rem] md:w-[13.3rem] mt-[1.5rem] flex flex-col justify-center">
               <p>Hi 🦝</p>
               <p>I&apos;m a frontend developer</p>
               <p>from Belgium</p>
@@ -93,8 +93,8 @@ export default function Home() {
         ]}
       />
 
-      <main className="w-full  h-full z-20 grid grid-cols-2 dark:divide-dark-secondary divide-light-secondary">
-        <section className="w-full xl:h-[30rem] lg:h-[20rem] border-r dark:border-dark-secondary border-light-secondary">
+      <main className="w-full  h-full z-20 grid sm:grid-cols-2 grid-cols-1 dark:divide-dark-secondary divide-light-secondary">
+        <section className="w-full xl:h-[30rem] lg:h-[20rem] sm:border-r border-b dark:border-dark-secondary border-light-secondary">
           <Link
             href="/project/lynx"
             className="border-2 border-light-primary dark:border-dark-primary dark:hover:border-dark-secondary overflow-hidden p-10 hover:border-light-secondary w-full h-full flex flex-col"
@@ -114,7 +114,7 @@ export default function Home() {
           </Link>
         </section>
 
-        <section className="w-full xl:h-[30rem] lg:h-[20rem] border-r dark:border-dark-secondary border-light-secondary">
+        <section className="w-full xl:h-[30rem] lg:h-[20rem] sm:border-r dark:border-dark-secondary border-light-secondary">
           <Link
             href="/project/musicians"
             className="border-2 border-light-primary dark:border-dark-primary overflow-hidden p-10 hover:border-light-secondary hover:dark:border-dark-secondary w-full h-full flex flex-col"
@@ -132,7 +132,7 @@ export default function Home() {
           </Link>
         </section>
 
-        <section className="w-full xl:h-[30rem] lg:h-[20rem] border-r border-t border-light-secondary">
+        <section className="w-full xl:h-[30rem] lg:h-[20rem] sm:border-r border-t border-light-secondary">
           <Link
             href="/project/3d-portfolio"
             className="border-2 dark:border-dark-primary border-light-primary overflow-hidden p-10 hover:border-light-secondary hover:dark:border-dark-secondary w-full h-full flex flex-col"
