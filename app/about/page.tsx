@@ -1,39 +1,23 @@
-export const metadata = {
-  title: "Senne Bels | About me",
-  description: "Your favourite frontend developer",
-  robots: {
-    index: true,
-  },
-  openGraph: {
-    title: "Senne Bels",
-    description: "Your favourite frontend developer",
-    url: "https://www.sennebels.xyz",
-    images: [
-      {
-        url: "https://sennebels.xyz/assets/images/twitter-pic.png",
-        width: 800,
-        height: 600,
-      },
-    ],
-  },
-};
+"use client";
 
 export default function About() {
   return (
-    <div className="min-h-screen mt-32 px-24 flex flex-col">
+    <div className="min-h-screen mt-20 xs:mt-32 px-8 xs:px-24 flex flex-col">
       <h1 className=" font-display text-8xl flex flex-col">
         <span>Hey!</span>
         <span> I&apos;m Senne</span>
       </h1>
-      <section className=" mt-20 text-body">
+      <section className=" my-8 xs:my-20 text-body">
         <p>Hello there fellow web explorer!</p>
       </section>
       <div className="flex flex-col gap-y-4">
-        <section className="flex gap-x-40">
+        <section className="flex gap-x-10 xs:gap-x-40">
           <p className="w-20">About</p>
-          <p>Front-end developer from Belgium looking to move to Canada</p>
+          <span className="flex flex-col">
+            <p>Front-end developer from Belgium looking to move to Canada</p>
+          </span>
         </section>
-        <section className="flex gap-x-40">
+        <section className="flex gap-x-10 xs:gap-x-40">
           <p className="w-20">Roles</p>
           <span className="flex flex-col">
             <p>Frontend</p>
@@ -42,7 +26,7 @@ export default function About() {
             <p>Artificial Intelligence</p>
           </span>
         </section>
-        <section className="flex gap-x-40">
+        <section className="flex gap-x-10 xs:gap-x-40">
           <p className="w-20">Hobbies</p>
           <span className="flex flex-col">
             <p>Football</p>
@@ -52,11 +36,29 @@ export default function About() {
             <p>Zoology</p>
           </span>
         </section>
-        <section className="flex gap-x-40">
+        <section className="flex gap-x-10 xs:gap-x-40">
           <p className="w-20">Contact</p>
           <span className="flex flex-col">
-            <p>sennebels@gmail.com</p>
-            <p>Linkedin</p>
+            <p
+              className="cursor-pointer underline underline-offset-2"
+              onClick={() =>
+                navigator.clipboard.writeText("sennebels@gmail.com")
+              }
+            >
+              sennebels@gmail.com
+            </p>
+            <a
+              href="https://www.linkedin.com/in/sennebels/"
+              className="underline underline-offset-2"
+            >
+              Linkedin
+            </a>
+            <a
+              href="https://github.com/snenenenenenene"
+              className="underline underline-offset-2"
+            >
+              Github
+            </a>
           </span>
         </section>
       </div>

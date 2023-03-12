@@ -1,12 +1,12 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import Image from "next/image";
-import Link from "next/link";
 import { Suspense, useRef, useState } from "react";
 import { TfiEmail, TfiGithub, TfiLinkedin } from "react-icons/tfi";
 import { Marquee } from "./components/common/Marquee";
 import { Model } from "./components/common/Model";
+import { Project } from "./components/common/Project";
+import { ThreeDProjects } from "./components/common/ThreeDProjects";
 import { MotionHover } from "./components/three/3d";
 export default function Home() {
   const [mousePos, setMousePos] = useState<{ x: number; y: number }>({
@@ -93,79 +93,30 @@ export default function Home() {
       />
 
       <main className="w-full h-full z-20 grid sm:grid-cols-2 grid-cols-1 dark:divide-dark-secondary divide-light-secondary">
-        <section className="w-full xl:h-[30rem] lg:h-[20rem] h-[30rem] sm:border-r border-b dark:border-dark-secondary border-light-secondary">
-          <Link
-            href="/project/lynx"
-            className="border-2 border-light-primary dark:border-dark-primary dark:hover:border-dark-secondary overflow-hidden p-10 hover:border-light-secondary w-full h-full flex flex-col"
-          >
-            <section className=" h-full relative">
-              <Image
-                src="assets/images/web/lynx-logo.svg"
-                className="w-full xl:h-[20rem] lg:h-[10rem] object-cover"
-                alt=""
-                unoptimized
-                fill
-              />
-            </section>
-            <p className="text-6xl font-display ml-auto mt-5">
-              LYNX LOCAL TAXES
-            </p>
-          </Link>
-        </section>
-
-        <section className="w-full xl:h-[30rem] lg:h-[20rem] h-[30rem] sm:border-r dark:border-dark-secondary border-light-secondary">
-          <Link
-            href="/project/musicians"
-            className="border-2 border-light-primary dark:border-dark-primary overflow-hidden p-10 hover:border-light-secondary hover:dark:border-dark-secondary w-full h-full flex flex-col"
-          >
-            <section className=" h-full relative">
-              <Image
-                src="assets/images/web/musicians.jpeg"
-                className="w-full xl:h-[20rem] lg:h-[10rem] object-cover"
-                alt=""
-                unoptimized
-                fill
-              />
-            </section>
-            <p className="text-6xl font-display ml-auto mt-5">MUSICIANS</p>
-          </Link>
-        </section>
-
-        <section className="w-full xl:h-[30rem] lg:h-[20rem] h-[30rem] sm:border-r border-t border-light-secondary">
-          <Link
-            href="/project/3d-portfolio"
-            className="border-2 dark:border-dark-primary border-light-primary overflow-hidden p-10 hover:border-light-secondary hover:dark:border-dark-secondary w-full h-full flex flex-col"
-          >
-            <section className=" h-full relative">
-              <Image
-                src="assets/images/web/3d.png"
-                className="w-full xl:h-[20rem] lg:h-[10rem] object-cover"
-                alt=""
-                unoptimized
-                fill
-              />
-            </section>
-            <p className="text-6xl font-display ml-auto mt-5">3D PORTFOLIO</p>
-          </Link>
-        </section>
-
-        <section className="w-full xl:h-[30rem] lg:h-[20rem] h-[30rem] border-t dark:border-dark-primary border-light-secondary">
-          <Link
-            href="/project/dnd-app"
-            className="border-2 dark:border-dark-primary border-light-primary overflow-hidden p-10 hover:border-light-secondary hover:dark:border-dark-secondary w-full h-full flex flex-col"
-          >
-            <section className="h-full relative">
-              <Image
-                src="assets/images/web/dnd-app.png"
-                className="w-full xl:h-[20rem] lg:h-[10rem] object-cover"
-                alt=""
-                unoptimized
-                fill
-              />
-            </section>
-            <p className="text-6xl font-display ml-auto mt-5">DND APP</p>
-          </Link>
-        </section>
+        <Project
+          className="sm:border-r border-b "
+          link={"/project/lynx"}
+          title="LYNX LOCAL TAXES"
+          image="assets/images/web/lynx-logo.svg"
+        />
+        <Project
+          title={"MUSICIANS"}
+          link={"/project/musicians"}
+          image={"assets/images/web/musicians.jpeg"}
+          className="sm:border-r"
+        />
+        <Project
+          title={"3D PORTFOLIO"}
+          link={"/project/3d-portfolio"}
+          image={"assets/images/web/3d.png"}
+          className="sm:border-r border-t"
+        />
+        <Project
+          title={"DND APP"}
+          link={"/project/dnd-app"}
+          image={"assets/images/web/dnd-app.png"}
+          className="border-t"
+        />
       </main>
 
       <Marquee
@@ -191,46 +142,30 @@ export default function Home() {
           }}
           className="absolute inset-0"
         >
-          <div
-            onMouseEnter={() => {
-              setThreeDHoverPath("assets/images/3D/velociraptor.png");
-            }}
-            className="border-t h-20 border-light-tertiary flex items-center sm:pl-32 pl-4"
-          >
-            <p>2022</p>
-            <p className="uppercase ml-32 text-lg sm:text-2xl">VELOCIRAPTOR</p>
-          </div>
-          <div
-            onMouseEnter={() => {
-              setThreeDHoverPath("assets/images/3D/room.png");
-            }}
-            className="border-t h-20 border-light-tertiary flex items-center sm:pl-32 pl-4"
-          >
-            <p>2022</p>
-            <p className="uppercase ml-32 text-lg  sm:text-2xl">MY ROOM</p>
-          </div>
-          {/* <div className="border-t h-20 border-light-tertiary flex items-center pl-32">
-            <p>2023</p>
-            <p className="uppercase ml-32 text-2xl">HOUSE</p>
-          </div> */}
-          <div
-            onMouseEnter={() => {
-              setThreeDHoverPath("assets/images/3D/laptop.png");
-            }}
-            className="border-t h-20 border-light-tertiary flex items-center sm:pl-32 pl-4"
-          >
-            <p>2023</p>
-            <p className="uppercase ml-32  text-lg sm:text-2xl">LAPTOP</p>
-          </div>
-          <div
-            onMouseEnter={() => {
-              setThreeDHoverPath("assets/images/3D/pangolin.png");
-            }}
-            className="border-t h-20 border-light-tertiary flex items-center sm:pl-32 pl-4"
-          >
-            <p>2023</p>
-            <p className="uppercase ml-32 text-lg sm:text-2xl">PANGOLIN</p>
-          </div>
+          <ThreeDProjects
+            year={"2022"}
+            setThreeDHoverPath={setThreeDHoverPath}
+            image="assets/images/3D/velociraptor.png"
+            title={"VELOCIRAPTOR"}
+          />
+          <ThreeDProjects
+            year={"2022"}
+            setThreeDHoverPath={setThreeDHoverPath}
+            image="assets/images/3D/room.png"
+            title={"MY ROOM"}
+          />
+          <ThreeDProjects
+            year={"2023"}
+            setThreeDHoverPath={setThreeDHoverPath}
+            image="assets/images/3D/laptop.png"
+            title={"LAPTOP"}
+          />
+          <ThreeDProjects
+            year={"2023"}
+            setThreeDHoverPath={setThreeDHoverPath}
+            image="assets/images/3D/pangolin.png"
+            title={"PANGOLIN"}
+          />
         </section>
       </main>
       <main className="w-full h-[50rem] sm:py-40 border-t dark:border-dark-secondary border-light-secondary relative">
