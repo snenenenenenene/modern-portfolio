@@ -38,6 +38,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           name="twitter:image"
           content="https://sennebels.xyz/assets/images/twitter-pic.png"
         />
+        <meta name="twitter:site" content="@snenenenene" />
+        <meta name="twitter:creator" content="@snenenenene" />
+        <meta property="og:url" content="https://www.sennebels.xyz" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="sennebels.xyz" />
+        <meta
+          property="og:description"
+          content="Your favourite frontend developer"
+        />
+        <meta
+          property="og:image"
+          content="https://sennebels.xyz/assets/images/twitter-pic.png"
+        />
       </Head>
       <body>
         <div className="w-screen scroll-smooth overflow-x-hidden text-light-secondary dark:text-dark-secondary flex flex-col bg-light-primary dark:bg-dark-primary">
