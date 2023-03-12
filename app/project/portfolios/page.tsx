@@ -1,7 +1,13 @@
+"use client";
+
 import { Marquee } from "@/app/components/common/Marquee";
+import { ProjectNavigation } from "@/app/components/common/ProjectNavigation";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function ThreePortfolio() {
+  const [theme] = useState(JSON.parse(localStorage.getItem("theme") as string));
+
   return (
     <div className="w-full min-h-screen h-full pt-20 flex-col">
       <main className="px-24 my-32 flex h-full   relative">
@@ -116,28 +122,55 @@ export default function ThreePortfolio() {
         </div>
         <div className="w-1/2 h-full flex flex-col gap-y-20">
           <section className="relative object-cover w-full h-96">
-            <Image
-              fill
-              alt="image-1"
-              src="/assets/images/web/3d.png"
-              className="w-full"
-            />
+            {theme === "dark" ? (
+              <Image
+                fill
+                alt="image-1"
+                src={"/assets/images/web/current-portfolio-dark.png"}
+                className="w-full"
+              />
+            ) : (
+              <Image
+                fill
+                alt="image-1"
+                src={"/assets/images/web/current-portfolio.png"}
+                className="w-full"
+              />
+            )}
           </section>
           <section className="relative object-cover w-full h-96">
-            <Image
-              fill
-              alt="image-1"
-              src="/assets/images/web/3d.png"
-              className="w-full"
-            />
+            {theme === "dark" ? (
+              <Image
+                fill
+                alt="image-1"
+                src="/assets/images/web/20s-portfolio-dark.png"
+                className="w-full"
+              />
+            ) : (
+              <Image
+                fill
+                alt="image-1"
+                src="/assets/images/web/20s-portfolio.png"
+                className="w-full"
+              />
+            )}
           </section>
           <section className="relative object-cover w-full h-96">
-            <Image
-              fill
-              alt="image-1"
-              src="/assets/images/web/3d.png"
-              className="w-full"
-            />
+            {theme === "dark" ? (
+              <Image
+                fill
+                alt="image-1"
+                src="/assets/images/web/room-portfolio-dark.png"
+                className="w-full"
+              />
+            ) : (
+              <Image
+                fill
+                alt="image-1"
+                src="/assets/images/web/room-portfolio.png"
+                className="w-full"
+              />
+            )}
           </section>
           <section className="relative object-cover w-full h-96">
             <Image
@@ -166,18 +199,10 @@ export default function ThreePortfolio() {
           "MORE PROJECTS",
         ]}
       />
-      <nav className="w-full h-[28rem] flex font-display text-[13rem]">
-        <section className="w-1/2 h-full border-t border-light-secondary border-r">
-          <div className="w-full h-full font-outline-2 text-light-primary hover:text-light-secondary hover:border-2 hover:font-outline-0 border-light-secondary flex justify-center items-center">
-            <h2>PREV</h2>
-          </div>
-        </section>
-        <section className="w-1/2 h-full border-t border-light-secondary">
-          <div className="w-full h-full font-outline-2 text-light-primary hover:text-light-secondary hover:border-2 hover:font-outline-0 border-light-secondary flex justify-center items-center">
-            <h2>NEXT</h2>
-          </div>
-        </section>
-      </nav>
+      <ProjectNavigation
+        prevLink="/project/musicians"
+        nextLink="/project/dnd-app"
+      />
     </div>
   );
 }

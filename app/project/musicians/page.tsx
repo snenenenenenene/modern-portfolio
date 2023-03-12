@@ -1,4 +1,5 @@
 import { Marquee } from "@/app/components/common/Marquee";
+import { ProjectNavigation } from "@/app/components/common/ProjectNavigation";
 import Image from "next/image";
 
 export default function Musicians() {
@@ -46,7 +47,7 @@ export default function Musicians() {
             <Image
               fill
               alt="image-1"
-              src="/assets/images/web/musicians.jpeg"
+              src="/assets/images/web/musicians.png"
               className="w-full"
             />
           </section>
@@ -54,7 +55,7 @@ export default function Musicians() {
             <Image
               fill
               alt="image-1"
-              src="/assets/images/web/musicians.jpeg"
+              src="/assets/images/web/swiping.png"
               className="w-full"
             />
           </section>
@@ -62,7 +63,7 @@ export default function Musicians() {
             <Image
               fill
               alt="image-1"
-              src="/assets/images/web/musicians.jpeg"
+              src="/assets/images/web/artist.png"
               className="w-full"
             />
           </section>
@@ -79,18 +80,10 @@ export default function Musicians() {
           "MORE PROJECTS",
         ]}
       />
-      <nav className="w-full h-[28rem] flex font-display text-[13rem]">
-        <section className="w-1/2 h-full border-t border-light-secondary border-r">
-          <div className="w-full h-full font-outline-2 text-light-primary hover:text-light-secondary hover:border-2 hover:font-outline-0 border-light-secondary flex justify-center items-center">
-            <h2>PREV</h2>
-          </div>
-        </section>
-        <section className="w-1/2 h-full border-t border-light-secondary">
-          <div className="w-full h-full font-outline-2 text-light-primary hover:text-light-secondary hover:border-2 hover:font-outline-0 border-light-secondary flex justify-center items-center">
-            <h2>NEXT</h2>
-          </div>
-        </section>
-      </nav>
+      <ProjectNavigation
+        prevLink="/project/flanders"
+        nextLink="/project/portfolios"
+      />
     </div>
   );
 }
