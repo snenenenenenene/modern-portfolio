@@ -3,6 +3,7 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState } from "react";
 import { TfiEmail, TfiGithub, TfiLinkedin } from "react-icons/tfi";
+import { House } from "./components/common/House";
 import { Marquee } from "./components/common/Marquee";
 import { Model } from "./components/common/Model";
 import { Project } from "./components/common/Project";
@@ -51,6 +52,12 @@ export default function Home() {
             />
           )}
         </Suspense>
+        <ambientLight intensity={2} />
+        <House
+          scale={10}
+          position={[-30, -270, -400]}
+          rotation={[0, -Math.PI + mousePos.y / 5000, 0]}
+        />
       </Canvas>
       <main className="sm:px-8 px-4 sm:pt-40 pt-20 flex w-full relative">
         <h1 className="z-10 font-display xl:text-[27.5rem] md:text-[15rem] xl:leading-[26rem] xs:leading-[9.5rem] leading-[6.7rem] md:leading-[14rem] xs:text-[10rem] text-[7rem]">
@@ -68,47 +75,60 @@ export default function Home() {
       <Marquee
         wordList={[
           "Welcome",
+          "🦝",
           "欢迎",
+          "🦥",
           "Bienvenue",
+          "🦦",
           "いらっしゃいませ",
+          "🦨",
           "Willkommen",
+          "🐉",
           "مرحباً",
+          "🦕",
           "Bienvenido",
+          "🍄",
           "добро пожаловать",
+          "🍁",
           "Benvenuto",
+          "🐌",
           "स्वागत",
-          "WEB DEVELOPMENT",
-          "WEB DEVELOPMENT",
+          "🐢",
         ]}
       />
       <main className="w-full h-20 sm:h-96 sm:py-40"></main>
       <Marquee
         wordList={[
           "WEB DEVELOPMENT",
+          "🍁",
           "WEB DEVELOPMENT",
+          "🐌",
           "WEB DEVELOPMENT",
+          "🐢",
           "WEB DEVELOPMENT",
+          "🦥",
           "WEB DEVELOPMENT",
+          "🦦",
         ]}
       />
 
       <main className="w-full h-full z-20 grid sm:grid-cols-2 grid-cols-1 dark:divide-dark-secondary divide-light-secondary">
         <Project
           className="sm:border-r border-b "
-          link={"/project/lynx"}
-          title="LYNX LOCAL TAXES"
+          link={"/project/flanders"}
+          title="Flanders AAB"
           image="assets/images/web/lynx-logo.svg"
         />
         <Project
           title={"MUSICIANS"}
           link={"/project/musicians"}
-          image={"assets/images/web/musicians.jpeg"}
+          image={"assets/images/web/musicians.png"}
           className="sm:border-r"
         />
         <Project
           title={"PORTFOLIOS"}
           link={"/project/portfolios"}
-          image={"assets/images/web/3d.png"}
+          image={"assets/images/web/20s-portfolio-dark.png"}
           className="sm:border-r border-t"
         />
         <Project
@@ -122,17 +142,29 @@ export default function Home() {
       <Marquee
         wordList={[
           "3D MODELS",
+          "🍁",
           "3D MODELS",
+          "🐌",
           "3D MODELS",
+          "🐢",
           "3D MODELS",
+          "🦥",
           "3D MODELS",
+          "🦦",
           "3D MODELS",
+          "🦥",
           "3D MODELS",
+          "🦦",
           "3D MODELS",
+          "🦥",
           "3D MODELS",
+          "🦦",
           "3D MODELS",
+          "🦥",
           "3D MODELS",
+          "🦦",
           "3D MODELS",
+          "🦥",
         ]}
       />
       <main className="w-full h-[20rem] flex flex-col relative">
@@ -168,11 +200,11 @@ export default function Home() {
           />
         </section>
       </main>
-      <main className="w-full h-[50rem] sm:py-40 border-t dark:border-dark-secondary border-light-secondary relative">
-        <h2 className="font-bold sm:text-[13rem] text-[6rem] text-center absolute left-1/2 top-1/2 -translate-y-1/2  -translate-x-1/2">
+      <main className="w-full h-[35rem] xs:h-[40rem] md:h-[55rem] sm:py-40 border-t dark:border-dark-secondary border-light-secondary relative">
+        <h2 className="font-bold sm:text-[13rem] text-[6rem] text-center absolute left-1/2 top-1/2 -translate-y-1/2  -translate-x-1/2 dark:font-outline-4 font-outline-dark-4 ">
           Reach out
         </h2>
-        <section className="text-7xl flex sm:px-40 px-10 justify-between gap-x-10 sm:mt-[30rem] mt-[40rem]">
+        <section className="text-7xl flex sm:px-40 px-10 justify-between gap-x-10 sm:mt-[37rem] mt-[32rem] pb-10 xs:pb-0">
           <div>
             <a href="https://www.linkedin.com/in/sennebels/">
               <TfiLinkedin />
