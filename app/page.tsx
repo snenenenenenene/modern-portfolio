@@ -53,10 +53,10 @@ export default function Home() {
         </Suspense>
       </Canvas>
       <main className="sm:px-8 px-4 sm:pt-40 pt-20 flex w-full relative">
-        <h1 className="z-10 font-display xl:text-[27.5rem] md:text-[15rem] xl:leading-[26rem] leading-[9.5rem] md:leading-[14rem] text-[10rem]">
+        <h1 className="z-10 font-display xl:text-[27.5rem] md:text-[15rem] xl:leading-[26rem] xs:leading-[9.5rem] leading-[6.7rem] md:leading-[14rem] xs:text-[10rem] text-[7rem]">
           <div>Senne Bels</div>
           <div className="flex">
-            <div className="font-body sm:text-2xl text-lg xl:w-[24.4rem] w-[8.9rem] md:w-[13.3rem] mt-[1.5rem] flex flex-col justify-center">
+            <div className="font-body sm:text-2xl xs:text-lg  text-base xl:w-[24.4rem] xs:w-[8.9rem] w-[6.2rem] md:w-[13.3rem] xs:mt-[1.5rem]  flex flex-col justify-center">
               <p>Hi 🦝</p>
               <p>I&apos;m a frontend developer</p>
               <p>from Belgium</p>
@@ -65,24 +65,23 @@ export default function Home() {
           </div>
         </h1>
       </main>
-      <main className="relative flex overflow-x-hidden border-y h-24 border-light-secondary items-center w-auto overflow-hidden font-bold dark:border-dark-secondary">
-        <div className="py-12 animate-marquee whitespace-nowrap items-center flex gap-x-4">
-          <p className="text-7xl w-64 text-center">Welcome</p>
-          <p className="text-7xl w-64 text-center">欢迎</p>
-          <p className="text-7xl w-64 text-center">Bienvenue</p>
-          <p className="text-3xl w-64 text-center">いらっしゃいませ</p>
-          <p className="text-7xl w-64 text-center">Willkommen</p>
-        </div>
-
-        <div className="absolute px-2 animate-marquee2 items-center whitespace-nowrap flex gap-x-4">
-          <p className="text-7xl w-64 text-center">مرحباً</p>
-          <p className="text-7xl w-64 text-center">Bienvenido</p>
-          <p className="text-3xl w-64 text-center">добро пожаловать</p>
-          <p className="text-7xl w-64 text-center">Benvenuto</p>
-          <p className="text-7xl w-64 text-center">स्वागत</p>
-        </div>
-      </main>
-      <main className="w-full h-96 py-40"></main>
+      <Marquee
+        wordList={[
+          "Welcome",
+          "欢迎",
+          "Bienvenue",
+          "いらっしゃいませ",
+          "Willkommen",
+          "مرحباً",
+          "Bienvenido",
+          "добро пожаловать",
+          "Benvenuto",
+          "स्वागत",
+          "WEB DEVELOPMENT",
+          "WEB DEVELOPMENT",
+        ]}
+      />
+      <main className="w-full h-20 sm:h-96 sm:py-40"></main>
       <Marquee
         wordList={[
           "WEB DEVELOPMENT",
@@ -93,8 +92,8 @@ export default function Home() {
         ]}
       />
 
-      <main className="w-full  h-full z-20 grid sm:grid-cols-2 grid-cols-1 dark:divide-dark-secondary divide-light-secondary">
-        <section className="w-full xl:h-[30rem] lg:h-[20rem] sm:border-r border-b dark:border-dark-secondary border-light-secondary">
+      <main className="w-full h-full z-20 grid sm:grid-cols-2 grid-cols-1 dark:divide-dark-secondary divide-light-secondary">
+        <section className="w-full xl:h-[30rem] lg:h-[20rem] h-[30rem] sm:border-r border-b dark:border-dark-secondary border-light-secondary">
           <Link
             href="/project/lynx"
             className="border-2 border-light-primary dark:border-dark-primary dark:hover:border-dark-secondary overflow-hidden p-10 hover:border-light-secondary w-full h-full flex flex-col"
@@ -114,7 +113,7 @@ export default function Home() {
           </Link>
         </section>
 
-        <section className="w-full xl:h-[30rem] lg:h-[20rem] sm:border-r dark:border-dark-secondary border-light-secondary">
+        <section className="w-full xl:h-[30rem] lg:h-[20rem] h-[30rem] sm:border-r dark:border-dark-secondary border-light-secondary">
           <Link
             href="/project/musicians"
             className="border-2 border-light-primary dark:border-dark-primary overflow-hidden p-10 hover:border-light-secondary hover:dark:border-dark-secondary w-full h-full flex flex-col"
@@ -132,7 +131,7 @@ export default function Home() {
           </Link>
         </section>
 
-        <section className="w-full xl:h-[30rem] lg:h-[20rem] sm:border-r border-t border-light-secondary">
+        <section className="w-full xl:h-[30rem] lg:h-[20rem] h-[30rem] sm:border-r border-t border-light-secondary">
           <Link
             href="/project/3d-portfolio"
             className="border-2 dark:border-dark-primary border-light-primary overflow-hidden p-10 hover:border-light-secondary hover:dark:border-dark-secondary w-full h-full flex flex-col"
@@ -150,7 +149,7 @@ export default function Home() {
           </Link>
         </section>
 
-        <section className="w-full xl:h-[30rem] lg:h-[20rem] border-t dark:border-dark-primary border-light-secondary">
+        <section className="w-full xl:h-[30rem] lg:h-[20rem] h-[30rem] border-t dark:border-dark-primary border-light-secondary">
           <Link
             href="/project/dnd-app"
             className="border-2 dark:border-dark-primary border-light-primary overflow-hidden p-10 hover:border-light-secondary hover:dark:border-dark-secondary w-full h-full flex flex-col"
@@ -196,19 +195,19 @@ export default function Home() {
             onMouseEnter={() => {
               setThreeDHoverPath("assets/images/3D/velociraptor.png");
             }}
-            className="border-t h-20 border-light-tertiary flex items-center pl-32"
+            className="border-t h-20 border-light-tertiary flex items-center sm:pl-32 pl-4"
           >
             <p>2022</p>
-            <p className="uppercase ml-32 text-2xl">VELOCIRAPTOR</p>
+            <p className="uppercase ml-32 text-lg sm:text-2xl">VELOCIRAPTOR</p>
           </div>
           <div
             onMouseEnter={() => {
               setThreeDHoverPath("assets/images/3D/room.png");
             }}
-            className="border-t h-20 border-light-tertiary flex items-center pl-32"
+            className="border-t h-20 border-light-tertiary flex items-center sm:pl-32 pl-4"
           >
             <p>2022</p>
-            <p className="uppercase ml-32 text-2xl">MY ROOM</p>
+            <p className="uppercase ml-32 text-lg  sm:text-2xl">MY ROOM</p>
           </div>
           {/* <div className="border-t h-20 border-light-tertiary flex items-center pl-32">
             <p>2023</p>
@@ -218,27 +217,27 @@ export default function Home() {
             onMouseEnter={() => {
               setThreeDHoverPath("assets/images/3D/laptop.png");
             }}
-            className="border-t h-20 border-light-tertiary flex items-center pl-32"
+            className="border-t h-20 border-light-tertiary flex items-center sm:pl-32 pl-4"
           >
             <p>2023</p>
-            <p className="uppercase ml-32 text-2xl">LAPTOP</p>
+            <p className="uppercase ml-32  text-lg sm:text-2xl">LAPTOP</p>
           </div>
           <div
             onMouseEnter={() => {
               setThreeDHoverPath("assets/images/3D/pangolin.png");
             }}
-            className="border-t h-20 border-light-tertiary flex items-center pl-32"
+            className="border-t h-20 border-light-tertiary flex items-center sm:pl-32 pl-4"
           >
             <p>2023</p>
-            <p className="uppercase ml-32 text-2xl">PANGOLIN</p>
+            <p className="uppercase ml-32 text-lg sm:text-2xl">PANGOLIN</p>
           </div>
         </section>
       </main>
-      <main className="w-full h-[50rem] py-40 border-t dark:border-dark-secondary border-light-secondary relative">
-        <h2 className="font-bold text-[13rem] absolute left-1/2 top-1/2 -translate-y-1/2  -translate-x-1/2">
+      <main className="w-full h-[50rem] sm:py-40 border-t dark:border-dark-secondary border-light-secondary relative">
+        <h2 className="font-bold sm:text-[13rem] text-[6rem] text-center absolute left-1/2 top-1/2 -translate-y-1/2  -translate-x-1/2">
           Reach out
         </h2>
-        <section className="text-7xl flex px-40 justify-between mt-[30rem]">
+        <section className="text-7xl flex sm:px-40 px-10 justify-between gap-x-10 sm:mt-[30rem] mt-[40rem]">
           <div>
             <a href="https://www.linkedin.com/in/sennebels/">
               <TfiLinkedin />

@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { useSelectedLayoutSegment } from "next/navigation";
 import Link from "next/link";
+import { useSelectedLayoutSegment } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 export const Navbar = () => {
   const [theme, setTheme] = useState("");
@@ -73,7 +73,7 @@ export const Navbar = () => {
           : "h-0"
       } fixed z-50 transition-all duration-500 dark:bg-dark-primary bg-light-primary overflow-hidden font-body w-full  flex`}
     >
-      <section className="border-r text-5xl dark:border-dark-secondary border-light-secondary flex justify-center items-center w-40 h-full">
+      <section className="border-r text-5xl dark:border-dark-secondary border-light-secondary flex justify-center items-center sm:w-40 w-80 h-full">
         <Link href={"/"}>
           <h2 className="font-display tracking-wide">Senne Bels</h2>
         </Link>
