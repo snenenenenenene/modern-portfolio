@@ -106,8 +106,8 @@ export default function Home() {
           className="sm:border-r"
         />
         <Project
-          title={"3D PORTFOLIO"}
-          link={"/project/3d-portfolio"}
+          title={"PORTFOLIOS"}
+          link={"/project/portfolios"}
           image={"assets/images/web/3d.png"}
           className="sm:border-r border-t"
         />
