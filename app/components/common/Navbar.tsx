@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 export const Navbar = () => {
   const [theme, setTheme] = useState("");
-  // for dark mode
+
   useEffect(() => {
     const theme = JSON.parse(localStorage.getItem("theme") as string);
     if (
@@ -82,14 +82,18 @@ export const Navbar = () => {
         <Link
           href={"/"}
           className={`${
-            activeSegment === "" || activeSegment === null ? "underline" : ""
+            activeSegment === "" || activeSegment === null
+              ? "underline underline-offset-4"
+              : ""
           }`}
         >
           PROJECTS
         </Link>
         <Link
           href={"/about"}
-          className={`${activeSegment === "about" ? "underline" : ""}`}
+          className={`${
+            activeSegment === "about" ? "underline underline-offset-4" : ""
+          }`}
         >
           ABOUT
         </Link>
