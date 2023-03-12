@@ -27,12 +27,22 @@ html {
 
 @layer base {
   .font-outline-2 {
-    -webkit-text-stroke: 1.5px black;
+    -webkit-text-stroke: 1.5px #262523;
   }
   .font-outline-0 {
-    -webkit-text-stroke: 0px black;
+    -webkit-text-stroke: 0px #262523;
   }
   .font-outline-4 {
-    -webkit-text-stroke: 4px black;
+    -webkit-text-stroke: 4px #262523;
+  }
+
+  .font-outline-dark-2 {
+    -webkit-text-stroke: 1.5px #fff7f0;
+  }
+  .font-outline-dark-0 {
+    -webkit-text-stroke: 0px #fff7f0;
+  }
+  .font-outline-dark-4 {
+    -webkit-text-stroke: 4px #fff7f0;
   }
 }
