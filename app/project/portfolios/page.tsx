@@ -3,10 +3,14 @@
 import { Marquee } from "@/app/components/common/Marquee";
 import { ProjectNavigation } from "@/app/components/common/ProjectNavigation";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ThreePortfolio() {
-  const [theme] = useState(JSON.parse(localStorage.getItem("theme") as string));
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    setTheme(JSON.parse(localStorage.getItem("theme") as string));
+  }, []);
 
   return (
     <div className="w-full min-h-screen h-full pt-20 flex-col">
