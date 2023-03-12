@@ -1,4 +1,22 @@
-import React from "react";
+export const metadata = {
+  title: "Senne Bels | About me",
+  description: "Your favourite frontend developer",
+  robots: {
+    index: true,
+  },
+  openGraph: {
+    title: "Senne Bels",
+    description: "Your favourite frontend developer",
+    url: "https://www.sennebels.xyz",
+    images: [
+      {
+        url: "https://sennebels.xyz/assets/images/twitter-pic.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+  },
+};
 
 export default function About() {
   return (

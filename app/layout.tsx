@@ -4,6 +4,11 @@ import { Navbar } from "./components/common/Navbar";
 import "./globals.css";
 
 export const metadata = {
+  title: "Senne Bels",
+  description: "Your favourite frontend developer",
+  robots: {
+    index: true,
+  },
   openGraph: {
     title: "Senne Bels",
     description: "Your favourite frontend developer",
@@ -16,15 +21,11 @@ export const metadata = {
       },
     ],
   },
-  robots: {
-    index: true,
-  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      {/* <Head /> */}
       <Head>
         <link rel="shortcut icon" href="assets/sun.ico" />
         <meta name="twitter:card" content="summary_large_image" />
